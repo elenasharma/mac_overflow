@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get '/answers/:id/upvote', to: "answers#upvote", as: "upvote_answer"
   get '/answers/:id/downvote', to: "answers#downvote", as: "downvote_answer"
 
-  root 'questions#index'
+
 end

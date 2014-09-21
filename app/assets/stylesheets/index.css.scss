@@ -1,6 +1,41 @@
-$font-stack: Helvetica, sans-serif;
+$head_color: #444;
+$font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 body{
-	font-family: $font-stack;
+	font-family: $font;
+	font-weight: 100;
 }
 
+.form_container{
+	text-align: center;
+	width: 40em;
+	height: 100%;
+	margin-top: 5em;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 18px;
+
+	form{
+		text-align: left;
+	}
+
+	a, .button {
+	color:white;
+	text-decoration: none;
+	margin-bottom: 2em;
+	background-image: linear-gradient(#37AAEA ,#117ED2);
+	box-shadow: inset 0 1px 1px 0 #6FC5F5;
+	padding: 7px 24px;
+	border-radius: 4px;
+	}
+
+	#signup{
+		text-align: left;
+		float: left;
+	}
+
+	#login{
+		text-align: left;
+		float: right;
+	}
+}

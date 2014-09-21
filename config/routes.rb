@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/answers/:id/downvote', to: "answers#downvote", as: "downvote_answer"
 
   # for BCrypt
-  get '/' => 'home#index'
+  get '/' => 'home#index', as: :home
   get "/log_in" => "sessions#new"
   post "/log_in" => "sessions#create"
   get "/log_out" => "sessions#destroy", as: :log_out

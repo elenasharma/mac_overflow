@@ -14,15 +14,26 @@ body {
   background-color: $head_color;
   border-bottom: 3px solid $highlight;
   padding-top: .5em;
-  text-align: center;
 
   .title {
-    margin: 2px 0;
+    margin: 2px 3%;
     font-family: "Times New Roman"
   }
 
-  .sign_out {
+  .nav_links {
+    margin-top: 1%;
     float: right;
+    margin-right: 3%;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    transition: color, .5s;
+  }
+
+  a:hover {
+    color: $highlight;
   }
 }
 

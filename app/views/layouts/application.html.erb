@@ -8,8 +8,13 @@
 </head>
 <body>
   <header class="layout_header">
-    <%= link_to "Sign Out", log_out_path, class: "sign_out" %>
-    <h1 class="title"><%= link_to "Mac Overflow", root_path %></h1>
+    <% if !current_user %>
+      <%= link_to "Login", home_path, class: "nav_links" %>
+      <%= link_to "Sign In", home_path, class: "nav_links" %>
+    <% else %>
+      <%= link_to "Sign Out", log_out_path, class: "nav_links sign_out" %>
+    <% end %>
+    <h1 class="title"><%= link_to "Mac Overflow", questions_path %></h1>
   </header>
 
 <%= yield %>

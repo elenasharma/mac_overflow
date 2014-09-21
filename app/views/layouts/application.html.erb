@@ -7,10 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="background">
+  </div>
+  <%= render partial: 'layouts/signin' %>
+  <%= render partial: 'layouts/login' %>
   <header class="layout_header">
     <% if !current_user %>
-      <%= link_to "Login", home_path, class: "nav_links" %>
-      <%= link_to "Sign In", home_path, class: "nav_links" %>
+      <a class="nav_links login_link">Login</a>
+      <a class="nav_links signin_link">Sign Up</a>
     <% else %>
       <%= link_to "Sign Out", log_out_path, class: "nav_links sign_out" %>
     <% end %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#index'
+  root 'questions#index'
 
   resources :users do
     resources :questions, name_prefix: "user_"

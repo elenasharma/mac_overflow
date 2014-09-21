@@ -11,15 +11,13 @@ var responseController = {
 var responseView = {
 	renderResponseForm: function(e, data){
 		var responseIdLink = $(this).attr("class")
-		$('#' + responseIdLink).append(data)
-		$('.responselink .' + responseIdLink).off('ajax:success', responseView.renderResponseForm)
+		console.log(data)
+		$('.responselink.' + responseIdLink).append(data)
+		$('.responselink ' + responseIdLink).off('ajax:success', responseView.renderResponseForm)
 		$(this).remove()
 	},
 	renderResponse: function(e,data){
-		console.log(this)
-		console.log(data)
 		var responseAnswerId = $(this).attr("class")
-		console.log(responseAnswerId)
 		$('#' + responseAnswerId + ' .response_container').append(data)
 	}
 }

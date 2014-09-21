@@ -5,12 +5,21 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def new
+    @question = current_user.questions.new
+  end
+
   def create
+    current_user.questions.create(question_params)
+    redirect_to '/'
   end
 
   def show
     @answers = @question.answers
     @answer = @question.answers.new
+  end
+
+  def edit
   end
 
   def update
@@ -20,6 +29,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def question_params
+    params.require(:question).permit(:title, :body)
+  end
 
   def get_question
     @question = Question.find(params[:id])

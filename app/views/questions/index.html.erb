@@ -1,3 +1,7 @@
+<% if current_user %>
+  <%= link_to 'New Question', new_question_path, class: "new_question_link" %>
+<% end %>
+
 <% @questions.each do |question| %>
 <article class="question_container">
   <h3><%= link_to question.title, question_path(question) %></h3>

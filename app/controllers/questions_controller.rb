@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   before_filter :get_question, only: [:show, :edit, :update, :destroy]
 
   def index
-    @questions = Question.all
+    @questions = Question.order(created_at: :desc)
   end
 
   def new
@@ -15,8 +15,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @answers = @question.answers
+    p params 
     @answer = Answer.new
+    ### Newest created answer first ###
+    if params[:order] == "new"
+      @answers = @question.answers.order(created_at: :desc)
+    else
+      ### Show by descending number of votes ### (default)
+      @answers = @question.answers.order(votecount: :desc)
+    end
+    
   end
 
   def edit

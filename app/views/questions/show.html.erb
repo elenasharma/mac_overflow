@@ -4,7 +4,11 @@
 <p><b>Question:</b>  <%= @question.body %></p>
 <hr>
 
-<h3>Answers: <%= @answers.size %></h3>
-
+<div class="answersheader">
+	<h3>Answers: <%= @answers.size %></h3>
+	Order by: 
+	<%= link_to "new", {controller: "questions", action: "show", :order => "new"} %>
+	<%= link_to "top voted", {controller: "questions", action: "show", :order => "votesdesc"} %>
+</div>
 <%= render 'answers' %>
 

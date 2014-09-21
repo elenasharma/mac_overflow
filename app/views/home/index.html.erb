@@ -1,0 +1,6 @@
+<h1>Welcome to Mac Overflow</h1>
+<% if current_user %>
+  <%= link_to questions_url, questions_path %>
+<% else %>
+  <%= render 'forms' %>
+<% end %>

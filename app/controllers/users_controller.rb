@@ -1,31 +1,24 @@
 class UsersController < ApplicationController
 
-	def index
-		p params
-	end
-
-	def show
-		@user = User.find(params[:id])
+	def new
 	end
 
 	def create
 		@user = User.new(user_params)
 		if @user.save
-			redirect_to @user
+			flash[:notice] = "Welcome to the site!"
+			redirect_to questions_path
 		else
-			redirect_to new_user_path
+			flash[:alert] = "There was a problem creating your account. Please try again."
+			redirect_to '/'
 		end
-	end
-
-	def new
-		
 	end
 
 
 	private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :password, :password_confirmation)
   end
-	
+
 end

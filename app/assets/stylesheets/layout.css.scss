@@ -1,5 +1,5 @@
 $offwhitebg: #FAFAFA;
-$head_color: #444;
+$head_color: rgba(0, 0, 0, 0.6);
 $font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 $link-font-color: #08C;
 $text-color: #333;
@@ -61,6 +61,7 @@ a:hover{
     font-weight: 100;
     margin-top: 0;
     text-align: center;
+    padding-left: 6em;
   }
 
   a{

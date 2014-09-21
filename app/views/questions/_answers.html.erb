@@ -8,11 +8,11 @@
 
 <div class="responselink"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div> 
 
+	<div class="response_container" id: <%= answer.id %>></div>
   <% answer.responses.each do |response| %>
-  <div class="response_container" id: <%= answer.id %>></div>
     <p><b>Response:</b>  <%= response.body %></p>
-  </div>
   <% end %>
+	</div>
 
 </div>
 <hr>

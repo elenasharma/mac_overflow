@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :answers do
-    resources :responses, name_prefix: "answer_"
+    resources :responses, :constraints => { :id => /.*/ }, name_prefix: "answer_"
   end
 
   get '/answers/:id/upvote', to: "answers#upvote", as: "upvote_answer"

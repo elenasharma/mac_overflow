@@ -1,15 +1,15 @@
 <section class="signin_lightbox">
-  <h1>Sign Up</h1>
+
   <%=form_for User.new do |f| %>
-    <%=f.label :username %>
-    <%=f.text_field :username %>
+    <%=f.label :username %>&nbsp;&nbsp;
+    <%=f.text_field :username %><br>
 
-    <%=f.label :password %>
-    <%=f.password_field :password %>
+    <%=f.label :password %>&nbsp;&nbsp;   
+    <%=f.password_field :password %><br>
 
-    <%=f.label :password_confirmation %>
-    <%=f.password_field :password_confirmation %>
+    <%=f.label :password_confirmation %>&nbsp;&nbsp;
+    <%=f.password_field :password_confirmation %><br><br>
 
-    <%=f.submit "Sign Up" %>
+    <%=f.submit "Sign Up" , class:"button" %>
   <%end%>
 </section>

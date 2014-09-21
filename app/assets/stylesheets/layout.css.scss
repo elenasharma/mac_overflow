@@ -14,11 +14,22 @@ body {
   background-color: $offwhitebg;
 }
 
- .sign_out{
-  float: right;
-  vertical-align: middle;
-  /*padding: .5em 2em;*/
- }
+a{
+  text-decoration: none;
+  color: $link-font-color;
+  font-family: $font;
+  font-weight: 100;
+}
+
+p{
+  color: $text-color;
+  font-size: 20px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
 
 .content{
   width: 80%;
@@ -28,10 +39,6 @@ body {
   height: 100%;
   z-index: 0;
 
-  .topofquestions{
-    text-align: center;
-    font-size: 40px;
-  }
   .question_container{
     padding: 2em 1em 2em 1em;
     z-index: 1;
@@ -88,10 +95,41 @@ body {
 .signin_lightbox, .login_lightbox {
   position: absolute;
   margin: 13% 30%;
+  padding: 2em;
   background-color: $lighter_color;
-  width: 40%;
-  height: 25em;
+  width: 30%;
+  height: 20em;
   text-align: center;
+
+  label{
+    display: inline-block;
+    clear: left;
+    width: 250px;
+  }
+
+  input {
+    display: inline-block;
+    width: 250px;
+    line-height: 2em;
+    font-size: 16px;
+    font-family: $font;
+    font-weight: 100;
+  }
+
+  p{
+    font-family: $font;
+    font-weight: 100;
+  }
+
+  .button {
+    color:white;
+    text-decoration: none;
+    background-image: linear-gradient(#37AAEA ,#117ED2);
+    box-shadow: inset 0 1px 1px 0 #6FC5F5;
+    padding: 7px 24px;
+    border-radius: 4px;
+  }
+
 }
 
 

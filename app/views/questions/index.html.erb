@@ -1,5 +1,7 @@
+<p style="text-align: center;">Recently Asked Questions</p>
+
 <% if current_user %>
-  <%= link_to 'New Question', new_question_path, class: "new_question_link" %>
+  <p><%= link_to 'New Question', new_question_path, class: "new_question_link" %></p>
 <% end %>
 
 <% @questions.each do |question| %>

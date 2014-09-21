@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
 
   def show
     @answers = @question.answers
-    @answer = @question.answers.new
+    @answer = Answer.new
   end
 
   def update

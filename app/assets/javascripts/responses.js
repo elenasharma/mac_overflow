@@ -21,8 +21,8 @@ var responseView = {
 
 
 
-$(document).ready(function(){
+$(document).on('page:load',function(){
 
 	$('.responselink a').on('ajax:success', responseView.renderResponseForm)
-	$('#new_response').on('ajax:success', function(){console.log("You submitted a response!")})
+  // $('#new_response').on('ajax:success', function(){console.log("You submitted a response!")})
 });

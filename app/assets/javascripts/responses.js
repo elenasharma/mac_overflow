@@ -14,11 +14,16 @@ var responseView = {
 		console.log(data)
 		$('.responselink.' + responseIdLink).append(data)
 		$('.responselink ' + responseIdLink).off('ajax:success', responseView.renderResponseForm)
-		$(this).remove()
+		$(this).toggle()
 	},
 	renderResponse: function(e,data){
 		var responseAnswerId = $(this).attr("class")
 		$('#' + responseAnswerId + ' .response_container').append(data)
+		$(this).remove()
+		responseView.renderResponseLink(responseAnswerId)
+	},
+	renderResponseLink: function(responseAnswerId){
+		$('#' + responseAnswerId + " .responselink a").toggle()
 	}
 }
 

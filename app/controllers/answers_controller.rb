@@ -14,8 +14,6 @@ class AnswersController < ApplicationController
   end
 
   def upvote
-    p "clicked"
-    p params
     @answer = Answer.find(params[:id])
     @votes = @answer.votes
     @votes.create()

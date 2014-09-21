@@ -1,3 +1,4 @@
+<%= render 'answer_form' %>
 <h1><%= @question.title %></h1>
 <hr>
 <p><b>Question:</b>  <%= @question.body %></p>
@@ -10,5 +11,4 @@
 	<%= link_to "top voted", {controller: "questions", action: "show", :order => "votesdesc"} %>
 </div>
 <%= render 'answers' %>
-<%= render 'answer_form' %>
 

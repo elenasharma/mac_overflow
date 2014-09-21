@@ -3,19 +3,19 @@ ready = function() {
 
   // Controller
   var bindEvents = function() {
-    $('.answer_container').on('click', '.vote', voteAjax)
+    $('.answer_container').on('click', '.vote', voteAjax);
   }
 
-  var voteAjax = function(event) {
+  var voteAjax = function() {
     event.preventDefault();
     var button = $(this);
-    console.log("clicked")
+    console.log("clicked");
     $.ajax({
       url: button.attr('href'),
       type: 'GET'
     }).done(function(vote_count) {
       View.updateVoteCount(button, vote_count);
-    })
+    });
   }
 
   // View
@@ -31,3 +31,4 @@ ready = function() {
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+

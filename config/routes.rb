@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'users#index'
+
   resources :users do
     resources :questions, name_prefix: "user_"
   end
@@ -15,5 +17,5 @@ Rails.application.routes.draw do
   get '/answers/:id/upvote', to: "answers#upvote", as: "upvote_answer"
   get '/answers/:id/downvote', to: "answers#downvote", as: "downvote_answer"
 
-  root 'questions#index'
+
 end

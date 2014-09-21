@@ -12,17 +12,18 @@ describe QuestionsController, :type => :controller do
 		end
 	end
 
-	# context "#show" do
-	# 	it "should return a 200 status code" do
-	# 		get :show, id: "1"
-	# 		response.status.should be(200)
-	# 	end
-		# let(:question) { create :question }
-		# it "assigns @answer" do
-			# get :show, id: "1"
+	context "#show" do
+		it "should return a 200 status code" do
+			question_path, id="1"
+			response.status.should be(200)
+		end
+
+		let(:question) { create :question }
+		it "assigns @answer" do
+			question_path, id="1"
 			# assigns(:answer).should_not be_nil
-			# expect(assigns(:answer)).to be_a_new Answer
-		# end
+			expect(assigns(:answer)).to eq Answer.new
+		end
 
 		# it "accesses that @question is assigned to question" do
 		# 	get :show, :id => question.id
@@ -31,5 +32,5 @@ describe QuestionsController, :type => :controller do
 
 		# it "assigns @answers to @question.answers" do
 		# end
-	# end
+	end
 end

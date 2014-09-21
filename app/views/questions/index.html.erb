@@ -10,3 +10,12 @@
 </article>
 <% end %>
 
+
+<script> 
+var questions = document.getElementsByClassName('question_container');
+	for (var i = 0; i < questions.length; i++){
+		if (i % 2 == 1){
+			questions[i].setAttribute("id","odd") 
+		}
+	}
+</script>

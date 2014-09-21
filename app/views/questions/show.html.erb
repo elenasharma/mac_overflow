@@ -1,3 +1,4 @@
+<%= render 'answer_form' %>
 <h1><%= @question.title %></h1>
 <hr>
 <p><b>Question:</b>  <%= @question.body %></p>
@@ -6,5 +7,4 @@
 <h3>Answers: <%= @answers.size %></h3>
 
 <%= render 'answers' %>
-<%= render 'answer_form' %>
 

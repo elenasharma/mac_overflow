@@ -14,8 +14,6 @@ class AnswersController < ApplicationController
   end
 
   def upvote
-    p "clicked"
-    p params
     @votes = Answer.find(params[:id]).votes
     @votes.create()
     render json: @votes.size

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'users#index'
+  root 'home#index'
 
   resources :users do
     resources :questions, name_prefix: "user_"
@@ -17,5 +17,10 @@ Rails.application.routes.draw do
   get '/answers/:id/upvote', to: "answers#upvote", as: "upvote_answer"
   get '/answers/:id/downvote', to: "answers#downvote", as: "downvote_answer"
 
+  # for BCrypt
+  get '/' => 'home#index'
+  get "/log_in" => "sessions#new"
+  post "/log_in" => "sessions#create"
+  get "/log_out" => "sessions#destroy", as: :log_out
 
 end

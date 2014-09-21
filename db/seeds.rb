@@ -9,7 +9,7 @@
 
 5.times{User.create(username: Faker::Internet.user_name, password: Faker::Internet.password)}
 
-User.all.each do |user| 
+User.all.each do |user|
 	user.questions << Question.create(title: Faker::Lorem.sentence, body: Faker::Lorem.sentence(1), user_id: user.id)
 end
 

@@ -1,3 +1,4 @@
+<% p @answer.id %>
 <%= form_for [@answer, @response], remote: true, :html => {:class => @answer.id} do |f| %>
   <%= f.label "Response" %>
   <%= f.text_area :body %>

@@ -6,13 +6,13 @@
 
   <p><a class="vote" href="/answers/<%= answer.id %>/upvote">up</a>  <a class="vote" href="/answers/<%= answer.id %>/downvote">down</a>  |  Vote Count:  <span class="vote_count"><%= answer.votes.size %></span></p>
 
-<div class="responselink"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div> 
+<div class="responselink <%= answer.id %>"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div> 
 
-  <% answer.responses.each do |response| %>
-  <div class="response_container" id: <%= answer.id %>></div>
-    <p><b>Response:</b>  <%= response.body %></p>
-  </div>
-  <% end %>
+	<div class="response_container" id: <%= answer.id %>>
+		<% answer.responses.each do |response| %>
+		<p><b>Response:</b>  <%= response.body %></p>
+		<% end %>
+	</div>
 
 </div>
 <hr>

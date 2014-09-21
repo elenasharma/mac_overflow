@@ -15,9 +15,16 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    ### Show by descending number of votes ###
-    @answers = @question.answers.order(votecount: :desc)
+    p params 
     @answer = Answer.new
+    ### Newest created answer first ###
+    if params[:order] == "new"
+      @answers = @question.answers.order(created_at: :desc)
+    else
+      ### Show by descending number of votes ### (default)
+      @answers = @question.answers.order(votecount: :desc)
+    end
+    
   end
 
   def edit

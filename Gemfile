@@ -33,6 +33,17 @@ group :development do
   gem 'rails_db_info'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+end
+
 gem 'pg'
 
 # Use ActiveModel has_secure_password

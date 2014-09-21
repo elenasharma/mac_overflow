@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :responses, name_prefix: "answer_"
   end
 
+  resources :sessions
+
 
 end

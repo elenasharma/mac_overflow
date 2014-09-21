@@ -15,7 +15,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @answers = @question.answers
+    ### Show by descending number of votes ###
+    @answers = @question.answers.order(votecount: :desc)
     @answer = Answer.new
   end
 

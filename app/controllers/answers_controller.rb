@@ -16,14 +16,18 @@ class AnswersController < ApplicationController
   def upvote
     p "clicked"
     p params
-    @votes = Answer.find(params[:id]).votes
+    @answer = Answer.find(params[:id])
+    @votes = @answer.votes
     @votes.create()
+    @answer.increment!(:votecount, by = 1)
     render json: @votes.size
   end
 
   def downvote
-    @votes = Answer.find(params[:id]).votes
+    @answer = Answer.find(params[:id])
+    @votes = @answer.votes
     @votes.last.destroy
+    @answer.decrement!(:votecount, by = 1)
     render json: @votes.size
   end
 

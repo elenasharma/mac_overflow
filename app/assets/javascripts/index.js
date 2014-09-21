@@ -1,13 +1,11 @@
 
 $(document).ready(function(){
 	$('#signup').bind("ajax:success", function(e, data, status, xhr){
-		// $('.login').toggle("up");
-		$('.signup').toggle("down");
+		$('.signup').toggle("blind");
 	});
 
 	$('#login').bind("ajax:success", function(e, data, status, xhr){
-		// $('.signup').toggle("up");
-		$('.login').toggle("down");
+		$('.login').toggle("blind");
 	});
 
 });

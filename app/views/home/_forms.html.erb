@@ -1,19 +1,23 @@
-<h1>Sign Up</h1>
+<div class="signup" style="display: none;">
+
 <%=form_for User.new do |f| %>
 <%=f.label :username %>
-<%=f.text_field :username %>
+<%=f.text_field :username %><br>
 <%=f.label :password %>
-<%=f.password_field :password %>
+<%=f.password_field :password %><br>
 <%=f.label :password_confirmation %>
-<%=f.password_field :password_confirmation %>
-<%=f.submit "Sign Up" %>
+<%=f.password_field :password_confirmation %><br>
+<%=f.submit "Sign Up", class:"button" %>
 <%end%>
+</div>
 
-<h1>Log In</h1>
+<div class="login" style="display: none;">
+
 <%=form_tag '/log_in' do%>
 <%=label_tag :username %>
-<%=text_field_tag :username %>
+<%=text_field_tag :username %><br>
 <%=label_tag :password %>
-<%=password_field_tag :password %>
-<%=submit_tag "Log in" %>
+<%=password_field_tag :password %><br>
+<%=submit_tag "Log in", class:"button" %>
 <%end%>
+</div>

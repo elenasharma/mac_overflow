@@ -11,8 +11,9 @@
     <%= link_to "Sign Out", log_out_path, class: "sign_out" %>
     <h1 class="title"><%= link_to "Mac Overflow", root_path %></h1>
   </header>
-
-<%= yield %>
+	<div class="content">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

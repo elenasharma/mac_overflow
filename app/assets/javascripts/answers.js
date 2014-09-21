@@ -1,4 +1,5 @@
-$(document).on('page:load', function() {
+var ready;
+ready = function() {
 
   // Controller
   var bindEvents = function() {
@@ -26,4 +27,7 @@ $(document).on('page:load', function() {
 
   bindEvents();
 
-})
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

@@ -6,8 +6,8 @@
 
 <% @questions.each do |question| %>
 <article class="question_container">
-  <p><%= link_to question.title, question_path(question) %><span class="question_author"> by <%= question.user.username %><br>
-  <%= question.created_at %></span></p>
+  <p><%= link_to question.title, question_path(question) %><span class="question_author"> by <%= link_to question.user.username, user_path(question.user.id)%> <br>
+  <%= question.created_at.strftime("%b %e, %l:%M %p") %></span></p>
 
 </article>
 <% end %>

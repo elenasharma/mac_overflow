@@ -2,7 +2,7 @@ FactoryGirl.define do
 
   factory :question do
     title {Faker::Lorem.word}
-    body {Fake::Lorem.sentence}
+    body {Faker::Lorem.sentence}
   end
 
   factory :answer do

@@ -36,7 +36,7 @@ end
 
 class QuestionSeeder
   def self.seed
-    10.times do
+    12.times do
       user = User.find(rand(10) + 1)
       user.questions.create(title: Faker::Lorem.sentence(4, false, 6), body: Faker::Lorem.paragraph(3, false, 5))
     end
@@ -54,7 +54,6 @@ end
 class ResponseSeeder
   def self.seed
     50.times do
-      user = User.find(rand(10) + 1)
       Answer.find(rand(30) + 1).responses.create(body: Faker::Lorem.sentence(4, false, 6), user_id: rand(10) + 1)
     end
   end

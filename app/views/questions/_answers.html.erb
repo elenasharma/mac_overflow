@@ -6,7 +6,7 @@
 
   <p><a class="vote" href="/answers/<%= answer.id %>/upvote">☝︎</a>  <a class="vote" href="/answers/<%= answer.id %>/downvote">☟</a>  |  Vote Count:  <span class="vote_count"><%= answer.votes.size %></span></p>
 
-<div class="responselink <%= answer.id %>"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div> 
+<div class="responselink <%= answer.id %>"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div>
 
 	<div class="response_container" id: <%= answer.id %>>
 		<% answer.responses.each do |response| %>

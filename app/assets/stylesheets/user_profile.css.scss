@@ -2,14 +2,21 @@ $head_color: #444;
 $link-font-color: #08C;
 $offwhitebg: #FAFAFA;
 
-.username {
-  margin-top: -.5em;
-  font-size: 1.8em;
+.username_container {
+  margin-top: -1.8em;
+  font-size: 1.5em;
+  width: 40%;
+
+  .edit_user_button {
+    font-size: .5em;
+  }
 }
+
 
 #accordion {
   width: 48%;
-  margin-bottom: 10em;
+  margin-bottom: 13em;
+  margin-top: -1em;
 
   .accordion_title {
     text-align: center;

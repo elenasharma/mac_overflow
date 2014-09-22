@@ -1,13 +1,13 @@
 <%= render 'answer_form' %>
 <div class="questionheader">
-  Question:&nbsp;&nbsp; 
+  Question:&nbsp;&nbsp;
 	<strong><%= @question.title %></strong><br>
 	 <%= @question.body %>
 </div>
 
 <div class="answersheader">
 	<h3>Answers: <%= @answers.size %></h3>
-	Order by: 
+	Order by:
 	<%= link_to "new", {controller: "questions", action: "show", :order => "new"} %> |
 	<%= link_to "top voted", {controller: "questions", action: "show", :order => "votesdesc"} %>
 </div>

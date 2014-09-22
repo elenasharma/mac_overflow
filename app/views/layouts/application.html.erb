@@ -18,6 +18,7 @@
       <a class="nav_links signin_link">Sign Up</a>
     <% else %>
       <%= link_to "Sign Out", log_out_path, class: "nav_links sign_out" %>
+      <%= link_to 'Profile', user_path(current_user), class: "nav_links sign_out" %>
     <% end %>
     <h1 class="title"><%= link_to "Mac Overflow", questions_path %></h1>
   </header>

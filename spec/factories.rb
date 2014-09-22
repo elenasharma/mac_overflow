@@ -14,4 +14,7 @@ FactoryGirl.define do
   	password_hash { Faker::Internet.password(10) }
   	password_salt { Faker::Internet.password(20) }
   end
+
+  factory :vote do 
+  end
 end

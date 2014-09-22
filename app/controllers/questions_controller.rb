@@ -14,14 +14,11 @@ class QuestionsController < ApplicationController
     redirect_to '/'
   end
 
-  def show
-    p params 
+  def show 
     @answer = Answer.new
-    ### Newest created answer first ###
     if params[:order] == "new"
       @answers = @question.answers.order(created_at: :desc)
     else
-      ### Show by descending number of votes ### (default)
       @answers = @question.answers.order(votecount: :desc)
     end
     

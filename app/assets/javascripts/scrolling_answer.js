@@ -1,11 +1,3 @@
-// $(window).scroll(function(){
-// 	console.log("scrolling!")
-// 	$("#new_answer")
-// 		.stop()
-// 		.animate({"marginTop": ($(window).scrollTop()) + "px"},
-// 		"slow" );
-// });
-
 var ready;
 ready = function() {
 	var $scrollingForm = $(".new_answer");
@@ -18,4 +10,4 @@ ready = function() {
 };
 
 $(document).ready(ready);
-$(document).on('click', ready)
+$(document).on('click', ready);

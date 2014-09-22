@@ -1,6 +1,6 @@
 <%= render 'answer_form' %>
 <div class="questionheader">
-  Question by <%= link_to @question.user.username, user_path(@question.user.id)%>  
+  Question by <%= link_to @question.user.username, user_path(@question.user.id)%>
   <%= @question.created_at.strftime("%b %e, %l:%M %p") %>
 	<br><strong><%= @question.title %></strong><br>
 	 <%= @question.body %>

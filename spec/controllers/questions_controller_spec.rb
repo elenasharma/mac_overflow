@@ -14,8 +14,10 @@ describe QuestionsController, :type => :controller do
 			get :index
 			expect(assigns(:questions)).to eq Question.order(created_at: :desc)
 		end
+	end
 
-
+	context "#create" do
+		let(:user) { create :user }
 		it "generates and recognizes the create route" do
 			assert_routing({ path: 'questions', method: :post }, { controller: 'questions', action: 'create' })
 		end
@@ -26,6 +28,13 @@ describe QuestionsController, :type => :controller do
 				controller.session[:user_id] = user.id
 				post :create, :question => attributes_for(:question)
 			}.to change{ Question.count }.by(1)
+		end
+
+		it "should create a question that is the current user's" do
+			expect {
+			controller.session[:user_id] = user.id
+			post :create, :question => attributes_for(:question)
+			}.to change{(User.find(user.id).questions.count) }.by(1) 
 		end
 	end
 

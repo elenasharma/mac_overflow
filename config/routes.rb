@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   post "/log_in" => "sessions#create"
   get "/log_out" => "sessions#destroy", as: :log_out
 
+  delete '/reponse/:id' => "responses#destroy", as: :response
+
 end

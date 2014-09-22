@@ -14,14 +14,14 @@ class QuestionsController < ApplicationController
     redirect_to '/'
   end
 
-  def show 
+  def show
     @answer = Answer.new
     if params[:order] == "new"
       @answers = @question.answers.order(created_at: :desc)
     else
       @answers = @question.answers.order(votecount: :desc)
     end
-    
+
   end
 
   def edit
@@ -31,6 +31,8 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    Question.find(params[:id]).destroy
+    redirect_to root_path
   end
 
   private

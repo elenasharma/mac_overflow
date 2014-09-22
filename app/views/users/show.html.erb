@@ -10,9 +10,11 @@
 </section>
 
 <div class="username_container">
-	<p class="username"><%= @user.username %>
-	
-	</p>
+	<h1 class="username"><%= @user.username %>
+	<% if current_user != nil && @user == current_user  %>
+		<span class="edit_user_button"><%= link_to 'Edit', edit_user_path(@user) %></span>
+	<% end %>
+	</h1>
 </div>
 
 <div id="accordion">
@@ -23,6 +25,9 @@
 			<% @user.questions.each do |q| %>
 					<a href="<%= question_url(q) %>"><%= count %>. <strong><%= q.title %></strong></a><br>
 					<%= q.body %><br>
+					<% if current_user != nil && @user == current_user  %>
+						<%= link_to 'Delete', question_path(q), method: :delete %><br>
+					<% end %>
 					<% count += 1 %>
 			<% end %>
 		</div>
@@ -32,6 +37,9 @@
 			<% count = 1 %>
 			<% @user.answers.each do |a| %>
 				<%="#{count}. #{a.body} "%><br>
+				<% if current_user != nil && @user == current_user  %>
+					<%= link_to 'Delete', answer_path(a), method: :delete %><br>
+				<% end %>
 				<% count += 1 %>
 			<% end %>
 		</div>
@@ -42,6 +50,9 @@
 			<% count = 1 %>
 			<% @user.responses.each do |r| %>
 				<%="#{count}. #{r.body} "%><br>
+				<% if current_user != nil && @user == current_user  %>
+					<%= link_to 'Delete', response_path(r), method: :delete %><br>
+				<% end %>
 				<% count += 1 %>
 			<% end %>
 		</div>

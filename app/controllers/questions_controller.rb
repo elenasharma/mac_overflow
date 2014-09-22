@@ -2,7 +2,11 @@ class QuestionsController < ApplicationController
   before_filter :get_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
-    @questions = Question.order(created_at: :desc)
+    if params[:order] == "new"
+      @questions = Question.order(created_at: :desc)
+    else
+      @questions = Question.order(votecount: :desc)
+    end
   end
 
   def new

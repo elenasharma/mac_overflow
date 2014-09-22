@@ -3,6 +3,9 @@
 <% if current_user %>
   <div class="new_question_button"> <%= link_to 'Ask a New Question', new_question_path, class: "button" %></div><br><br>
 <% end %>
+Order by:
+<%= link_to "new", {controller: "questions", action: "index", :order => "new"} %> |
+<%= link_to "top voted", {controller: "questions", action: "index", :order => "votesdesc"} %>
 
 <% @questions.each do |question| %>
 <article class="question_container">

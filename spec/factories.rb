@@ -18,6 +18,7 @@ FactoryGirl.define do
 
   factory :response do
     body { Faker::Lorem.sentence }
+  end
 
   factory :vote do 
 

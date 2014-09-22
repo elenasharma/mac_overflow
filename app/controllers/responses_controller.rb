@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
 	def new
-		p "hel"
+		
 		@response = Response.new
 		@answer = Answer.find(params[:answer_id])
 

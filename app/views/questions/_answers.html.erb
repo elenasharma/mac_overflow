@@ -4,13 +4,13 @@
 <div class="answer_container" id=<%= answer.id %>>
   <p><b>Answer:</b>  <%= answer.body %></p>
 
-  <p><a class="vote" href="/answers/<%= answer.id %>/upvote">up</a>  <a class="vote" href="/answers/<%= answer.id %>/downvote">down</a>  |  Vote Count:  <span class="vote_count"><%= answer.votes.size %></span></p>
+  <p><a class="vote" href="/answers/<%= answer.id %>/upvote">☝︎</a>  <a class="vote" href="/answers/<%= answer.id %>/downvote">☟</a>  |  Vote Count:  <span class="vote_count"><%= answer.votes.size %></span></p>
 
 <div class="responselink <%= answer.id %>"><%= link_to "Respond", new_answer_response_path(answer), remote: true, class: answer.id %> </div> 
 
 	<div class="response_container" id: <%= answer.id %>>
 		<% answer.responses.each do |response| %>
-		<p><b>Response:</b>  <%= response.body %></p>
+		<p><b>Response:</b><br>  <%= response.body %></p>
 		<% end %>
 	</div>
 
@@ -18,3 +18,4 @@
 <hr>
 <% end %>
 
+<%= stylesheet_link_tag "app/stylesheets/index.css.scss" %>

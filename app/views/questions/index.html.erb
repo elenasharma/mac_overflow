@@ -1,7 +1,7 @@
 <p style="text-align: center; font-size: 22px;">Recently Asked Questions</p>
 
 <% if current_user %>
-  <div class="new_question_button"> <%= button_to 'Ask a New Question', new_question_path, class: "button" %></div><br><br>
+  <div class="new_question_button"> <%= link_to 'Ask a New Question', new_question_path, class: "button" %></div><br><br>
 <% end %>
 
 <% @questions.each do |question| %>
@@ -13,11 +13,11 @@
 </article>
 <% end %>
 
-<script>	
+<script>
 var questions = document.getElementsByClassName('question_container');
 	for (var i = 0; i < questions.length; i++){
 		if (i % 2 == 1){
-			questions[i].setAttribute("id","odd") 
+			questions[i].setAttribute("id","odd")
 		}
 	}
 </script>

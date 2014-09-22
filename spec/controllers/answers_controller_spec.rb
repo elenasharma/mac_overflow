@@ -3,18 +3,28 @@
 # end
 
 require 'spec_helper'
-describe AnswersController, :type => :controller do
-	# context "#create" do
-	# 	it "should create a new answer" do
-	# 		expect {
-	# 			post :create, :answer => Factory.attributes_for(:answer)
-	# 			expect(response).to be_sucess
-	# 		}.to change { Answer.count }.by(1)
-	# 	end
+describe AnswersController, type: :controller do 
 
-		# it "should redirect" do
-		# 	post :create
-		# 	response.should be_redirect
-		# end
-	# end
+	let!(:question) {create :question}
+	let!(:answer) {create :answer}
+	context "#create" do
+		it "creates a new answer" do 
+			expect {
+				post :create, :question_id => question.id, :answer => attributes_for(:answer)
+			}.to change{Answer.count}.by(1)
+		end
+		it "redirects back to the question page after creating an answer" do 
+			expect {
+				post :create, :question_id => question.id, :answer => attributes_for(:answer)
+				response.should redirect_to controller: :questions, action: :show
+			}
+		end
+		it "creates a new answer that corresponds to the given question" do
+			expect {
+				post :create, :question_id => question.id, :answer => attributes_for(:answer)
+					expect Answer.last.question_id to eq(question.id)
+			}
+		end
+	end
+
 end

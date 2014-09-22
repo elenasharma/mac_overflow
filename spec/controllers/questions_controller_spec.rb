@@ -9,14 +9,17 @@ describe QuestionsController, :type => :controller do
 			expect(response.status).to be(200)
 		end
 
+
 		it "assigns @questions the set of ordered questions" do
 			get :index
 			expect(assigns(:questions)).to eq Question.order(created_at: :desc)
 		end
 
+
 		it "generates and recognizes the create route" do
 			assert_routing({ path: 'questions', method: :post }, { controller: 'questions', action: 'create' })
 		end
+
 
 		it "should create a new question" do
 			expect {

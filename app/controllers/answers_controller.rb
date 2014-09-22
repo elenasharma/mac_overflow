@@ -10,7 +10,6 @@ class AnswersController < ApplicationController
   end
 
   def destroy
-
   end
 
   def upvote

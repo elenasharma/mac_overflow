@@ -1,6 +1,7 @@
 FactoryGirl.define do
+
   factory :question do
-    title { Faker::Lorem.word}
+    title {Faker::Lorem.word}
     body {Fake::Lorem.sentence}
   end
 

@@ -2,7 +2,7 @@ class AnswersController < ApplicationController
   before_filter :get_question, only: [:create, :destroy, :update]
 
   def create
-    @answer = @question.answers.create(answer_params)
+    @answer = @question.answers.create(answer_params, user_id: current_user.id)
     redirect_to question_path(@question)
   end
 

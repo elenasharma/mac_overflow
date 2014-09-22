@@ -1,4 +1,6 @@
-<%= render 'answer_form' %>
+<% if current_user %>
+  <%= render 'answer_form' %>
+<% end %>
 <div class="questionheader">
   Question:&nbsp;&nbsp;
 	<strong><%= @question.title %></strong><br>

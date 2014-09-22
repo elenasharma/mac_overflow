@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
 	def new
-		
+
 		@response = Response.new
 		@answer = Answer.find(params[:answer_id])
 
@@ -8,10 +8,10 @@ class ResponsesController < ApplicationController
 	end
 
 	def create
-		p params 
+		p params
 		@answer = Answer.find(params[:answer_id])
 		@answer.responses << @response = Response.create(response_params)
-		# @response.save 
+		# @response.save
 
 		render partial: "show", locals: {response: @response}
 		# answer = Answer.find(params[:answer_id])

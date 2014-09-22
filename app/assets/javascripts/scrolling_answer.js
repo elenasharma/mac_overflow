@@ -5,7 +5,7 @@ ready = function() {
 	$(window).scroll(function(){
 		$scrollingForm
 			.stop()
-			.animate({"top": ($(window).scrollTop() + 400) + "px"}, "slow" );
+			.animate({"top": ($(window).scrollTop() + 300) + "px"}, "slow" );
 	});
 };
 

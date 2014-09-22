@@ -1,6 +1,6 @@
 $offwhitebg: #FAFAFA;
 $head_color: rgba(0, 0, 0, 0.6);
-$font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+$font: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 $link-font-color: #08C;
 $text-color: #333;
 $highlight: #c9302c;
@@ -34,9 +34,10 @@ a:hover{
 .content{
   width: 80%;
   padding: 5em;
-  margin: 5em auto auto 5em;
+  margin: 5em auto;
   background-color: white;
   height: 100%;
+  border-radius: 4px;
   z-index: 0;
 
   .question_container{
@@ -64,7 +65,7 @@ a:hover{
     padding-left: 6em;
   }
 
-  a{
+  a {
     text-decoration: none;
     color: white;
     margin: 2px 0;

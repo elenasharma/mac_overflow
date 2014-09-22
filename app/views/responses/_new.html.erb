@@ -1,7 +1,7 @@
 
 <%= form_for [@answer, @response], remote: true, :html => {:class => @answer.id} do |f| %>
-  <%= f.label "New Response" %><br>
-  <%= f.text_area :body %><br>
+  &nbsp;<%= f.label "New Response" %><br>
+  <%= f.text_area :body, size: "60x5" %><br>
   <%= f.submit class:"button" %>
 <% end %>
 

@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :responses
   has_many :votes, as: :voteable
 
+# use has_secure_password
   def self.authenticate(username, password)
     user = User.where(username: username).first
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)

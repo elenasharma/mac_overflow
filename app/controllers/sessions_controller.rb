@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 	end
 
 	def create
+    # CR - use has_secure_password
   @user = User.authenticate(params[:username], params[:password])
   if @user
     flash[:notice] = "You've been logged in."

@@ -1,4 +1,5 @@
 <section class="login_lightbox">
+  <!-- ../log_in is a fragile path use path helpers -->
   <%=form_tag '../log_in' do%>
   <%=label_tag :username %>
   <%=text_field_tag :username %><br>

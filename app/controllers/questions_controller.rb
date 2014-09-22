@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   before_filter :get_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
+    # create filtering/sorting method on your model and pass it the params so that you can have several ways of filtering.
     if params[:order] == "new"
       @questions = Question.order(created_at: :desc)
     else
@@ -11,15 +12,19 @@ class QuestionsController < ApplicationController
 
   def new
     @question = current_user.questions.new
+    # CR - don't need current_user here.
   end
 
   def create
+    # CR - what happens if I can't create it?  Use new / save
     current_user.questions.create(question_params)
     redirect_to '/'
   end
 
   def show
+
     @answer = Answer.new
+    # CR consider sorting methods on the answers model.
     if params[:order] == "new"
       @answers = @question.answers.order(created_at: :desc)
     else

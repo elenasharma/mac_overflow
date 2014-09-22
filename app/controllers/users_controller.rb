@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
+# CR - remove now that you don't have a new form.
 	def new
 	end
 

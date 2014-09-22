@@ -12,7 +12,7 @@ describe QuestionsController, :type => :controller do
 
 		it "assigns @questions the set of ordered questions" do
 			get :index
-			expect(assigns(:questions)).to eq Question.order(created_at: :desc)
+			expect(assigns(:questions)).to eq Question.order(votecount: :desc)
 		end
 	end
 
@@ -34,7 +34,7 @@ describe QuestionsController, :type => :controller do
 			expect {
 			controller.session[:user_id] = user.id
 			post :create, :question => attributes_for(:question)
-			}.to change{(User.find(user.id).questions.count) }.by(1) 
+			}.to change{(User.find(user.id).questions.count) }.by(1)
 		end
 	end
 

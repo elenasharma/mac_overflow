@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_filter :get_question, only: [:show, :edit, :update, :destroy]
+  before_filter :get_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
   def index
     @questions = Question.order(created_at: :desc)
@@ -33,6 +33,20 @@ class QuestionsController < ApplicationController
   def destroy
     Question.find(params[:id]).destroy
     redirect_to root_path
+  end
+
+  def upvote
+    @votes = @question.votes
+    @votes.create()
+    @question.increment!(:votecount, by = 1)
+    render json: @votes.size
+  end
+
+  def downvote
+    @votes = @question.votes
+    @votes.last.destroy
+    @question.decrement!(:votecount, by = 1)
+    render json: @votes.size
   end
 
   private

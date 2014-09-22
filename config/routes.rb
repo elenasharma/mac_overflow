@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get '/answers/:id/upvote', to: "answers#upvote", as: "upvote_answer"
   get '/answers/:id/downvote', to: "answers#downvote", as: "downvote_answer"
+  get '/questions/:id/upvote', to: "questions#upvote", as: "upvote_question"
+  get '/questions/:id/downvote', to: "questions#downvote", as: "downvote_question"
 
   # for BCrypt
   get '/' => 'home#index', as: :home

@@ -2,7 +2,7 @@ require 'spec_helper'
 describe QuestionsController, :type => :controller do
 
 	context "#index" do
-		let(:question) { create :question }
+		let!(:question) { create :question }
 		let(:user) { create :user }
 		it "should return a 200 status code" do
 			get :index
@@ -23,8 +23,8 @@ describe QuestionsController, :type => :controller do
 
 		it "should create a new question" do
 			expect {
-				post :create, :user_id => user.id, :question => attributes_for(:question)
-				expect(response).to be_success
+				controller.session[:user_id] = user.id
+				post :create, :question => attributes_for(:question)
 			}.to change{ Question.count }.by(1)
 		end
 	end

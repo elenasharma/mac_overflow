@@ -10,7 +10,13 @@
 
 	<div class="response_container" id: <%= answer.id %>>
 		<% answer.responses.each do |response| %>
-		<p>Response by <%= link_to response.user.username, user_path(response.user.id)%> <br>
+		<p>Response by 
+		<% if response.user  %>
+			<%= link_to response.user.username, user_path(response.user.id)%> 
+			<% else %>
+			Anonymous
+			<% end %>
+			<br>
   <%= response.created_at.strftime("%b %e, %l:%M %p") %><br><br>  <%= response.body %></p>
   <hr>
 		<% end %>

@@ -1,5 +1,5 @@
 <section class="user_about_section">
-	<h2 class="about_title">About:</h2>
+	<p class="about_title">About:</p>
 	<article class="text_area">
 		<% if @user.about == nil %>
 			Help people know more about you
@@ -10,11 +10,9 @@
 </section>
 
 <div class="username_container">
-	<h1 class="username"><%= @user.username %>
-	<% if current_user == nil || @user == current_user  %>
-		<span class="edit_user_button"><%= link_to 'Edit', edit_user_path(@user) %></span>
-	<% end %>
-	</h1>
+	<p class="username"><%= @user.username %>
+	
+	</p>
 </div>
 
 <div id="accordion">
@@ -48,5 +46,8 @@
 			<% end %>
 		</div>
 
+<% if current_user == nil || @user == current_user  %>
+		<span class="edit_user_button"><%= link_to 'Edit Profile', edit_user_path(@user) %></span>
+	<% end %>
 </div>
 

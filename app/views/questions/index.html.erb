@@ -1,12 +1,22 @@
-<p style="text-align: center;">Recently Asked Questions</p>
+<p style="text-align: center; font-size: 22px;">Recently Asked Questions</p>
 
 <% if current_user %>
-  <p><%= link_to 'New Question', new_question_path, class: "new_question_link" %></p>
+  <div class="new_question_button"> <%= button_to 'Ask a New Question', new_question_path, class: "button" %></div><br><br>
 <% end %>
 
 <% @questions.each do |question| %>
 <article class="question_container">
-  <h3><%= link_to question.title, question_path(question) %></h3>
+  <p><%= link_to question.title, question_path(question) %><span class="question_author"> by <%= link_to question.user.username, user_path(question.user.id)%> <br>
+  <%= question.created_at.strftime("%b %e, %l:%M %p") %></span></p>
+
 </article>
 <% end %>
 
+<script>	
+var questions = document.getElementsByClassName('question_container');
+	for (var i = 0; i < questions.length; i++){
+		if (i % 2 == 1){
+			questions[i].setAttribute("id","odd") 
+		}
+	}
+</script>

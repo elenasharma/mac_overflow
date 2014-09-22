@@ -15,6 +15,11 @@ FactoryGirl.define do
   	password_salt { Faker::Internet.password(20) }
   end
 
+
+  factory :response do
+    body { Faker::Lorem.sentence }
+
   factory :vote do 
+
   end
 end

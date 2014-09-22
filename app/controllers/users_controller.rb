@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+	def index
+		@users = User.all.order(created_at: :desc)
+	end
+
 	def show
 		@user = User.find(params[:id])
 	end
@@ -19,11 +23,19 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def edit
+	end
+
+	def update
+		current_user.update_attributes(user_params)
+		redirect_to user_path(current_user)
+	end
+
 
 	private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:username, :password, :password_confirmation, :about)
   end
 
 end

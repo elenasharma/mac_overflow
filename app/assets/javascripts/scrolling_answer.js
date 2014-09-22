@@ -2,10 +2,10 @@ var ready;
 ready = function() {
 	var $scrollingForm = $(".new_answer");
 
-	$(window).scroll(function(){			
+	$(window).scroll(function(){
 		$scrollingForm
 			.stop()
-			.animate({"top": ($(window).scrollTop() + 400) + "px"}, "slow" );			
+			.animate({"top": ($(window).scrollTop() + 400) + "px"}, "slow" );
 	});
 };
 

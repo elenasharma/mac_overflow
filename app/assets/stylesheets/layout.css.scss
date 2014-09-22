@@ -14,6 +14,10 @@ body {
   background-color: $offwhitebg;
 }
 
+#odd{
+  background-color: #F9F9F9;
+}
+
 a{
   text-decoration: none;
   color: $link-font-color;
@@ -30,7 +34,9 @@ a:hover{
   text-decoration: underline;
 }
 
-
+.new_question_button{
+  float: right;
+}
 .content{
   width: 80%;
   padding: 5em;
@@ -41,7 +47,7 @@ a:hover{
   z-index: 0;
 
   .question_container{
-    padding: 2em 1em 2em 1em;
+    padding: 1em 1em 1em 1em;
     z-index: 1;
   }
 
@@ -83,6 +89,13 @@ a:hover{
   a:hover {
     color: $highlight;
   }
+}
+
+.question_author{
+  float: right;
+  font-family: $font;
+  font-weight: light;
+  font-size: 12px;
 }
 
 .background {

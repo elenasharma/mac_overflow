@@ -10,6 +10,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
+    p current_user
     current_user.questions.create(question_params)
     redirect_to '/'
   end
